@@ -17,5 +17,5 @@ clang-format-11 --version
 
 if [ -n "$(git -C neo status --porcelain)" ]; then
     git -C neo diff
-    # exit 1
+    exit 1
 fi
