@@ -5,16 +5,11 @@
 # SPDX-License-Identifier: MIT
 #
 
-set -x
+set -e
 
-pwd
-ls -la
-env
-
-git -C neo remote -vv
-git -C neo log
-git -C neo fetch origin master
-git -C neo log
-git -C neo show HEAD
-git -C neo diff -U0 --no-color --relative origin/master..HEAD | clang-format-diff-11 -p1 -i
-git -C neo status
+git -C neo fetch origin ${GITHUB_BASE_REF}
+git -C neo diff -U0 --no-color --relative origin/${GITHUB_BASE_REF}..HEAD | clang-format-diff-11 -p1 -i
+if [ -n "\$(git -C neo status --porcelain)" ]; then
+    git -C neo status
+    exit 1
+fi
