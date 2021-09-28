@@ -16,10 +16,10 @@ jobs:
       with:
         path: neo
         ref: ${{ github.event.pull_request.head.sha }}
-    - name: echo
-      run: env
     - name: lint
       uses: ./neo/.github/actions/neo-lint
+    - name: echo
+      run: docker images
   build:
     runs-on: ubuntu-latest
     needs: lint
