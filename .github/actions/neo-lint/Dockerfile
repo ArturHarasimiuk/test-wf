@@ -6,13 +6,8 @@
 
 FROM docker.io/ubuntu:20.04
 
-RUN apt-get -y update ; apt-get install -y --allow-unauthenticated --no-install-recommends gpg software-properties-common
-RUN apt-get -y update ; apt-get install -y --allow-unauthenticated \
-    cmake \
-    g++-7 \
-    g++-8 \
-    g++-9 \
-    g++-10 \
+RUN apt-get -y update ; apt-get install -y --no-install-recommends gpg software-properties-common
+RUN apt-get -y update ; apt-get install -y --no-install-recommends \
     clang-format-11 \
     git \
     pkg-config \
