@@ -6,13 +6,7 @@
 
 FROM docker.io/ubuntu:20.04
 
-RUN apt-get -y update ; apt-get install -y --no-install-recommends gpg software-properties-common
-RUN apt-get -y update ; apt-get install -y --no-install-recommends \
-    clang-format-11 \
-    git \
-    pkg-config \
-    ninja-build \
-    file
+RUN apt-get -y update ; apt-get install -y --no-install-recommends clang-format-11 git
 
 COPY lint.sh /lint.sh
 
