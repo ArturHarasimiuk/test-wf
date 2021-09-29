@@ -7,6 +7,8 @@
 
 set -e
 
+env
+
 clang-format-11 --version
 
 (
