@@ -12,7 +12,7 @@ clang-format-11 --version
 (
     cd neo
     git fetch origin ${GITHUB_BASE_REF}
-    git diff -U0 --no-color origin/master..HEAD | clang-format-diff-11 -p1 -i
+    git diff -U0 --no-color origin/master..HEAD | clang-format-diff-11 -p1 -i -v -iregex '.*\.(cpp|h|inl)'
 )
 
 if [ -n "$(git -C neo status --porcelain)" ]; then
