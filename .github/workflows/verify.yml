@@ -17,6 +17,8 @@ jobs:
         path: neo
     - name: lint
       uses: ./neo/.github/actions/neo-lint
+      with:
+        path: neo
   build:
     runs-on: ubuntu-latest
     needs: lint
